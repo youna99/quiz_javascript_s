@@ -37,6 +37,16 @@
     </div>
 
     <script>
+      const spanEls = document.getElementsByTagName('span');
+      for (let i = 0; i < spanEls.length; i++) {
+        spanEls[i].style.color = 'blueviolet';
+        spanEls[i].style.fontWeight = "bold";
+      };
+
+      const containerEls = document.querySelector(".container");
+      containerEls.style.backgroundColor = '#eee';
+      containerEls.style.textAlign = "center";
+      
       // TODO: 문제 조건을 만족하는 js 코드 작성
     </script>
   </body>
