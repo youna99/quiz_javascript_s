@@ -46,7 +46,37 @@
       // writeNote() 함수를 미리 정의해두었습니다.
 
       // [등록] 버튼 클릭시 writeNote() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
-      function writeNote() {}
+      function writeNote() {
+        const writer = document.getElementById('writer').value;
+        const content = document.getElementById('content').value;
+        const table = document.getElementById('table');
+
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = ('0' + (date.getMonth() + 1)).slice(-2);
+        let day = ('0' + date.getDate()).slice(-2);
+        let hours = ('0' + date.getHours()).slice(-2);
+        let minutes = ('0' + date.getMinutes()).slice(-2);
+
+        let today = `${year}-${month}-${day} ${hours}:${minutes}`;
+
+        const tr = document.createElement('tr');
+        const tdWriter = document.createElement('td');
+        const tdContent = document.createElement('td');
+        const tdDate = document.createElement('td');
+        
+        table.append(tr);
+        tr.append(tdWriter);
+        tr.append(tdContent);
+        tr.append(tdDate);
+
+        tdWriter.textContent = writer;
+        tdContent.textContent = content;
+        tdDate.textContent = today;
+
+        document.getElementById('writer').value = null;
+        document.getElementById('content').value = null;
+      }
     </script>
   </body>
 </html>

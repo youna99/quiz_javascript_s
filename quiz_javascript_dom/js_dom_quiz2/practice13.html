@@ -30,10 +30,37 @@
       // cal(), reset() 함수를 미리 정의해두었습니다.
 
       // [계산] 버튼 클릭시 cal() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
-      function cal() {}
+      function cal() {
+        const value1 = Number(document.getElementById("value1").value);
+        const value2 = Number(document.getElementById("value2").value);
+        const operator = document.getElementById("operator").value;
+
+        let inputValue;
+
+        if (operator == '+') {
+          inputValue = value1 + value2;
+        } else if (operator == '-') {
+          inputValue = value1 - value2;
+        } else if (operator == '*') {
+          inputValue = value1 * value2;
+        } else if (operator == "/") {
+          inputValue = value1 / value2;
+        } else {
+          inputValue = ("잘못 입력하셨습니다.");
+        }
+
+        document.getElementById("result").value = inputValue;
+      };
 
       // [초기화] 버튼 클릭시 reset() 함수가 실행되도록 인라인 방식으로 미리 설정해 두었습니다.
-      function reset() {}
+      function reset() {
+        document.getElementById('value1').value = null;
+        document.getElementById('value2').value = null;
+        document.getElementById('operater').value = null;
+        document.getElementById('inputValue').value = null;
+      }
+
+
     </script>
   </body>
 </html>
